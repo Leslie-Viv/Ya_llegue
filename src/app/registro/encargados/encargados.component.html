@@ -1,1 +1,34 @@
-<p>encargados works!</p>
+<form class="row g-3">
+    <div class="col-md-4">
+      <label for="validationServer01" class="form-label">Nombre</label>
+      <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+      <div class="valid-feedback">
+        listo
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationServer02" class="form-label">Apellidos</label>
+      <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+      <div class="valid-feedback">
+        Listo
+      </div>
+    </div>
+    <div class="col-md-4">
+        <label for="validationServer03" class="form-label">Selecciona un alumno</label>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">juan</a></li>
+            <li><a class="dropdown-item" href="#">pedro</a></li>
+          </ul>
+        <div class="col-md-4">
+        <div>
+            <label for="imagen">foto</label>
+            <input type="file" id="imagen" name="imagen" (change)="onFileSelected($event)" required>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Registrarme</button>
+    </div>
+  </form>
