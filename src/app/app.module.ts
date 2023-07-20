@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PadresrComponent } from './registro/padresr/padresr.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home/home.component';
+import { PersonalrComponent } from './registro/personalr/personalr.component';
 
 
 @NgModule({
@@ -20,9 +21,9 @@ import { HomeComponent } from './home/home/home.component';
     PersonalComponent,
     AlumnosComponent,
     EncargadosComponent,
-    PadresComponent,
     PadresrComponent,
     HomeComponent,
+    PersonalrComponent,
   
   ],
   imports: [
