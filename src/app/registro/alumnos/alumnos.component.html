@@ -1,34 +1,40 @@
-<form class="row g-3">
-    <div class="col-md-4">
-      <label for="validationServer01" class="form-label">Nombre</label>
-      <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
-      <div class="valid-feedback">
-        listo
-      </div>
-    </div>
-    <div class="col-md-4">
-      <label for="validationServer02" class="form-label">Apellidos</label>
-      <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
-      <div class="valid-feedback">
-        Listo
-      </div>
-    </div>
-    <div class="col-md-4">
-      <label for="validationServerUsername" class="form-label">grado</label>
-      <div class="input-group has-validation">
-        <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
-        <div id="validationServerUsernameFeedback" class="invalid-feedback">
-          Por favor agrega un grado
+
+
+  <div class="background" >
+    <form class="custom-form"  >
+      <h1>Formulario alumnos</h1>
+      <br />
+      <div class="col-md-17">
+        <label for="validationServer01" class="form-label">Nombre(s)</label>
+        <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+        <div class="valid-feedback">
+          listo
         </div>
-        <div class="col-md-4">
-        <div>
-            <label for="imagen">foto</label>
-            <input type="file" id="imagen" name="imagen" (change)="onFileSelected()" required>
+      </div>
+      <div class="col-md-17">
+        <label for="validationServer02" class="form-label">Apellidos</label>
+        <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+        <div class="valid-feedback">
+          Listo
+        </div>
+      </div>
+      <div class="col-md-17">
+        <label for="validationServerUsername" class="form-label">grado</label>
+        <div class="input-group has-validation">
+          <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+            Por favor agrega un grado
+          </div>
+          <div class="col-md-4">
+          <div>
+              <label for="imagen">foto</label>
+              <input type="file" id="imagen" name="imagen"  required>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-12">
-      <button class="btn btn-primary" type="submit">Registrarme</button>
-    </div>
-  </form>
+
+      <br />
+      <button>Registrarme</button>
+    </form>
+  </div>
