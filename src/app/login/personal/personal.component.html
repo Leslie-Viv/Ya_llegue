@@ -1,13 +1,19 @@
 <div class="background">
-   <form class="custom-form">
-    <h1>Iniciar Sesión</h1>
-    <h3>Personal</h3>
-    <br />
-    <label for="email" class="form-label">Correo Electronico</label>
-    <input type="email" class="form-control" placeholder="usuario@gmail.com" id="email" name="email"/>
-    <label for="password" class="form-label">Contraseña</label>
-    <input type="password" class="form-control" id="password" name="password"/>
-    <br />
-    <button >Iniciar Sesión</button>
-  </form>
-</div>
+    <form class="custom-form" [formGroup]="miFormulario" (ngSubmit)="save()">
+      <h1>Iniciar Sesión</h1>
+      <h3>Personal</h3>
+      <br />
+  
+      <div class="col-md-17">
+        <label for="matricula" class="form-label">Matricula</label>
+        <input type="text" class="form-control" placeholder="Ingresa tu Matricula" id="matricula" formControlName="matricula" />
+      </div>
+      <div class="col-md-17">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="password" formControlName="password" />
+      </div>
+      <br />
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+  </div>
+  
