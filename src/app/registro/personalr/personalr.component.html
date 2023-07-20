@@ -1,10 +1,10 @@
 <div class="background">
-  <form class="custom-form">
+  <form class="custom-form" (ngSubmit)="registerPersonal()" #personalForm="ngForm">
     <h1>Formulario Personal</h1>
 
     <div class="form-group">
       <label for="nombre" class="form-label">Nombre</label>
-      <input type="text" class="form-control is-valid" id="nombre" value="Mark" required>
+      <input type="text" class="form-control is-valid" id="nombre" name="nombre" [(ngModel)]="EscuelaData.nombre" required>
       <div class="valid-feedback">
         Listo
       </div>
@@ -12,25 +12,39 @@
 
     <div class="form-group">
       <label for="apellidos" class="form-label">Apellidos</label>
-      <input type="text" class="form-control is-valid" id="apellidos" value="Otto" required>
+      <input type="text" class="form-control is-valid" id="apellidos" name="apellidos" [(ngModel)]="EscuelaData.apellidos" required>
       <div class="valid-feedback">
         Listo
       </div>
     </div>
 
     <div class="form-group">
-      <label for="grado" class="form-label">Grado</label>
-      <div class="input-group has-validation">
-        <input type="text" class="form-control is-invalid" id="grado" aria-describedby="gradoFeedback" required>
-        <div id="gradoFeedback" class="invalid-feedback">
-          Por favor agrega un grado
-        </div>
+      <label for="matricula" class="form-label">Matricula</label>
+      <input type="text" class="form-control is-valid" id="matricula" name="matricula" [(ngModel)]="EscuelaData.matricula" required>
+      <div class="valid-feedback">
+        Listo
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="puesto" class="form-label">Puesto</label>
+      <input type="text" class="form-control is-valid" id="puesto" name="puesto" [(ngModel)]="EscuelaData.puesto" required>
+      <div class="valid-feedback">
+        Listo
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="puesto" class="form-label">Password</label>
+      <input type="password" class="form-control is-valid" id="password" name="password"[(ngModel)]="EscuelaData.password" required>
+      <div class="valid-feedback">
+        Listo
       </div>
     </div>
 
     <div class="form-group">
       <label for="imagen">Foto</label>
-      <input type="file" id="imagen" name="imagen" (change)="onFileSelected()" required>
+      <input type="text" class="form-control is-valid" id="foto" name="foto"[(ngModel)]="EscuelaData.foto" required>
     </div>
 
     <button type="submit" class="button">Registrarme</button>
