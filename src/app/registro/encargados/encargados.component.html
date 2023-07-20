@@ -1,30 +1,28 @@
-
-<div class="background" >
-  <form class="custom-form"  >
+<div class="background">
+  <form class="custom-form">
     <h1>Formulario encargados</h1>
-    <br />
-    <div class="col-md-17">
-      <label for="validationServer01" class="form-label">Nombre(s)</label>
-      <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
-      <div class="valid-feedback">
-        listo
-      </div>
-    </div>
-    <div class="col-md-17">
-      <label for="validationServer02" class="form-label">Apellidos</label>
-      <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+
+    <div class="form-group">
+      <label for="nombre" class="form-label">Nombre(s)</label>
+      <input type="text" class="form-control is-valid" id="nombre" value="Mark" required>
       <div class="valid-feedback">
         Listo
       </div>
     </div>
-        <div class="col-md-4">
-        <div>
-            <label for="imagen">foto</label>
-            <input type="file" id="imagen" name="imagen" (change)="onFileSelected()" required>
-          </div>
-        </div>
-     
-    <br />
-    <button>Registrarme</button>
+
+    <div class="form-group">
+      <label for="apellidos" class="form-label">Apellidos</label>
+      <input type="text" class="form-control is-valid" id="apellidos" value="Otto" required>
+      <div class="valid-feedback">
+        Listo
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="imagen">Foto</label>
+      <input type="file" id="imagen" name="imagen" (change)="onFileSelected()" required>
+    </div>
+
+    <button type="submit" class="button">Registrarme</button>
   </form>
 </div>
