@@ -3,20 +3,18 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;	
+  padding: 0;
   font-family: Raleway, sans-serif;
 }
 
 .background {
-    height: 100vh;
-    width: 100%;
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    background-image:url(../assets/img/rosa.jpg);
-  }
-  
-
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(../assets/img/rosa.jpg);
+}
 
 .login {
   display: flex;
@@ -29,19 +27,19 @@
 }
 
 .custom-form {
-    /* linea para centrar */
+  /* linea para centrar */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   justify-content: center;
-  width: 1200px;
+  max-width: 1200px; /* Ajustamos el ancho máximo para que el formulario no se desborde */
+  width: 90%; /* Usamos porcentajes para que el formulario sea responsive */
   background-color: #fff;
   position: relative;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  padding: 50px 35px;
+  padding: 2.5em 1.75em; /* Usamos em units para que el padding sea responsive */
   animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -61,13 +59,13 @@
   font-weight: 700;
   line-height: 32px;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 1.875em;
   color: #292929;
 }
 
 .form-label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 0.625em;
   font-size: 16px;
   font-weight: 500;
   color: #292929;
@@ -79,20 +77,20 @@
   width: 100%;
   background-color: #f5f5f5;
   border-radius: 3px;
-  padding: 0 10px;
-  margin-bottom: 15px;
+  padding: 0 1em; /* Usamos em units para el padding responsive */
+  margin-bottom: 1.25em;
   font-size: 14px;
   font-weight: 400;
   color: #292929;
   border: 1px solid #ccc;
 }
 
-button {
-  margin-top: 30px;
+.button {
+  margin-top: 1.875em;
   width: 100%;
   background-color: #e74d8d;
   color: #fff;
-  padding: 10px 0;
+  padding: 0.625em 0; /* Usamos em units para el padding responsive */
   font-size: 16px;
   font-weight: 600;
   border-radius: 5px;
@@ -113,7 +111,7 @@ button {
   }
 }
 
-button:hover {
+.button:hover {
   background-color: #ff07d6;
 }
 
@@ -124,5 +122,16 @@ button:hover {
 .error-message {
   color: #ff5252;
   font-size: 12px;
-  margin-top: 5px;
+  margin-top: 0.3125em; /* Usamos em units para el margin-top responsive */
+}
+
+/* Media Query para ajustar el formulario en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .custom-form {
+    padding: 2em 1.25em; /* Ajustamos el padding para pantallas pequeñas */
+  }
+
+  .button {
+    padding: 0.5em 0; /* Ajustamos el padding del botón para pantallas pequeñas */
+  }
 }
