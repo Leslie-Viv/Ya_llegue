@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 export class AuthService {
   private loginUrl = 'http://localhost:3000/api/escuela/login';
 
+  private registerUrl = 'http://localhost:3000/api/escuela/register';
+
 
   constructor( private http: HttpClient) { }
 
@@ -15,4 +17,11 @@ export class AuthService {
     const body = {matricula: matricula, password: password };
     return this.http.post(this.loginUrl, body);
   }
+
+  register(nombre: string, apellidos: string, puesto: string,matricula: string, password: string, foto: string): Observable<any> {
+    const body = { nombre: nombre, apellidos: apellidos, puesto: puesto, matricula: matricula, password: password, foto: foto };
+    return this.http.post(this.registerUrl, body);
+  }
+
+
 }
