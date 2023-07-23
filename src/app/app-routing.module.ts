@@ -7,11 +7,13 @@ import { EncargadosComponent } from './registro/encargados/encargados.component'
 import { HomeComponent } from './home/home/home.component';
 import { PadresrComponent } from './registro/padresr/padresr.component';
 import { PersonalrComponent } from './registro/personalr/personalr.component';
+import { EncargadoprogresoComponent } from './progreso/encargado/encargado.component';
+import { PadreprogresoComponent } from './progreso/padre/padre.component';
 
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'loginpadres', pathMatch: 'full' },
   { path: 'home', component: HomeComponent},
   { path: 'loginpadres', component: PadresComponent},
   { path: 'loginpersonal', component: PersonalComponent},
@@ -19,6 +21,8 @@ const routes: Routes = [
   { path: 'registroencargados', component: EncargadosComponent},
   { path: 'registropadres', component: PadresrComponent},
   { path: 'registropersonal', component: PersonalrComponent },
+  { path: 'progesopersonal', component: EncargadoprogresoComponent },
+  { path: 'progresopadre', component: PadreprogresoComponent}
 
 ];
 

@@ -1,6 +1,19 @@
-<!-- <div class="background">
-   
-</div>  -->
-
- <app-personalr></app-personalr>
-   
+<div class="container">
+    <h1>Estado del niño</h1>
+  
+    <div class="progress-container">
+      <div class="progress-step" [ngClass]="{'active': currentStep >= 1, 'completed': currentStep > 1}">
+        <div class="step-text">Llegó a la escuela</div>
+      </div>
+      <div class="progress-step" [ngClass]="{'active': currentStep >= 2, 'completed': currentStep > 2}">
+        <div class="step-text">En clase</div>
+      </div>
+      <div class="progress-step" [ngClass]="{'active': currentStep >= 3, 'completed': currentStep > 3}">
+        <div class="step-text">Terminaron las clases</div>
+      </div>
+      <div class="progress-step" [ngClass]="{'active': currentStep >= 4, 'completed': currentStep > 4}">
+        <div class="step-text">Entregado al responsable</div>
+      </div>
+    </div>
+  </div>
+  

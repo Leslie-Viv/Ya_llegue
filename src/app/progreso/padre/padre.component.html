@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Progreso del Niño</h1>
+
+  <div *ngIf="progresoRegistrado">
+    <p>Nombre del niño: {{ progresoRegistrado?.nombre }}</p>
+    <p>Progreso registrado: {{ obtenerTextoProgreso(progresoRegistrado?.progreso) }}</p>
+  </div>
+
+  <div *ngIf="!progresoRegistrado">
+    <p>No se ha registrado ningún progreso para el niño.</p>
+  </div>
+</div>
