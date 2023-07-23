@@ -1,0 +1,60 @@
+<div class="container">
+  <h1>Registrar progreso del niño</h1>
+
+  <div class="progress-container">
+    <div class="progress-step" [ngClass]="{'active': currentStep >= 1, 'completed': currentStep > 1}">
+      <div class="step-text">Llegó a la escuela</div>
+    </div>
+    <div class="progress-step" [ngClass]="{'active': currentStep >= 2, 'completed': currentStep > 2}">
+      <div class="step-text">En clase</div>
+    </div>
+    <div class="progress-step" [ngClass]="{'active': currentStep >= 3, 'completed': currentStep > 3}">
+      <div class="step-text">Terminaron las clases</div>
+    </div>
+    <div class="progress-step" [ngClass]="{'active': currentStep >= 4, 'completed': currentStep > 4}">
+      <div class="step-text">Entregado al responsable</div>
+    </div>
+  </div>
+
+  <form (ngSubmit)="registrarProgreso()" #progresoForm="ngForm">
+    <div class="form-group">
+      <label for="nombre">Nombre del niño:</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" required>
+    </div>
+
+    <div class="form-group">
+      <label>Progreso:</label>
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" name="llegoEscuela" [(ngModel)]="llegoEscuela">
+          Llegó a la escuela
+        </label>
+      </div>
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" name="enClase" [(ngModel)]="enClase">
+          Está en clase
+        </label>
+      </div>
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" name="terminoClases" [(ngModel)]="terminoClases">
+          Terminaron las clases
+        </label>
+      </div>
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" name="entregadoResponsable" [(ngModel)]="entregadoResponsable">
+          Fue entregado al responsable
+        </label>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" >Registrar Progreso</button>
+  </form>
+
+  <div *ngIf="codigoQR" class="qr-container">
+    <h2>Código QR para el padre:</h2>
+    <qrcode [qrdata]="codigoQR" size="150"></qrcode>
+  </div>
+</div>

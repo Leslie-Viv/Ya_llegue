@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenService } from 'src/app/services/token.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-personal',
@@ -42,7 +42,7 @@ export class PersonalComponent {
           console.log('Bienvenido Usuario');
           console.log(this.tokenService.isLogged());
           if (this.tokenService.isLogged() == true) {
-            this.router.navigate(['home']);
+            this.router.navigate(['progesopersonal']);
           } else {
             Swal.fire({
               position: 'top-end',
