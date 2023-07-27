@@ -5,7 +5,8 @@
     <div class="form-group">
       <label for="nombre" class="form-label">Nombre(s)</label>
       <input type="text" class="form-control is-valid" id="nombre" value="Mark" required>
-      <div class="valid-feedback">
+      <div class="invalid-feedback">
+        
         Listo
       </div>
     </div>
@@ -13,21 +14,18 @@
     <div class="form-group">
       <label for="apellidos" class="form-label">Apellidos</label>
       <input type="text" class="form-control is-valid" id="apellidos" value="Otto" required>
-      <div class="valid-feedback">
+      <div class="invalid-feedback">
         Listo
       </div>
     </div>
 
     <div class="form-group">
-      <label for="grado" class="form-label">Grado</label>
-      <div class="input-group has-validation">
-        <input type="text" class="form-control is-invalid" id="grado" aria-describedby="gradoFeedback" required>
-        <div id="gradoFeedback" class="invalid-feedback">
-          Por favor agrega un grado
-        </div>
+      <label for="grado" class="form-label">grado</label>
+      <input type="text" class="form-control is-valid" id="grado" value="primero" required>
+      <div class="invalid-feedback">
+        redy
       </div>
     </div>
-
     <div class="form-group">
       <label for="imagen">Foto</label>
       <input type="file" id="imagen" name="imagen" (change)="onFileSelected()" required>
