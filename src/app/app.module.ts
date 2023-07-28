@@ -12,7 +12,8 @@ import { HomeComponent } from './home/home/home.component';
 import { PersonalrComponent } from './registro/personalr/personalr.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EncargadoprogresoComponent } from './progreso/encargado/encargado.component';
-import { QRCodeModule } from 'angularx-qrcode'; // Importa el módulo correcto
+import { QRCodeModule } from 'angularx-qrcode';
+import { HomepadresComponent } from './homepadres/homepadres.component'; // Importa el módulo correcto
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { QRCodeModule } from 'angularx-qrcode'; // Importa el módulo correcto
     HomeComponent,
     PersonalrComponent,
     EncargadoprogresoComponent,
+    HomepadresComponent,
   ],
   imports: [
     BrowserModule,
