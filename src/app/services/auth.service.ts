@@ -13,7 +13,12 @@ export class AuthService {
 
   constructor( private http: HttpClient) { }
 
-  login(matricula: string, password: string): Observable<any> {
+  loginPersonal(matricula: string, password: string): Observable<any> {
+    const body = {matricula: matricula, password: password };
+    return this.http.post(this.loginUrl, body);
+  }
+  
+  loginPadres(matricula: string, password: string): Observable<any> {
     const body = {matricula: matricula, password: password };
     return this.http.post(this.loginUrl, body);
   }
