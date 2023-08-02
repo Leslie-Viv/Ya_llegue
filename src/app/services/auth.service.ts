@@ -1,34 +1,42 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private loginUrl = 'http://localhost:3000/api/escuela/login';
-
   private registerUrl = 'http://localhost:3000/api/escuela/register';
+  private currentUserMatricula: string | null = null;
 
-  private homeurl = 'http://localhost:3000/api/escuela/';
 
-
-  constructor( private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   loginPersonal(matricula: string, password: string): Observable<any> {
-    const body = {matricula: matricula, password: password };
-    return this.http.post(this.loginUrl, body);
-  }
-  
-  loginPadres(matricula: string, password: string): Observable<any> {
-    const body = {matricula: matricula, password: password };
+    const body = { matricula: matricula, password: password };
     return this.http.post(this.loginUrl, body);
   }
 
-  register(nombre: string, apellidos: string, puesto: string,matricula: string, password: string, foto: string): Observable<any> {
+  loginPadres(matricula: string, password: string): Observable<any> {
+    const body = { matricula: matricula, password: password };
+    return this.http.post(this.loginUrl, body);
+  }
+
+  register(nombre: string, apellidos: string, puesto: string, matricula: string, password: string, foto: string): Observable<any> {
     const body = { nombre: nombre, apellidos: apellidos, puesto: puesto, matricula: matricula, password: password, foto: foto };
     return this.http.post(this.registerUrl, body);
   }
 
+  setCurrentUserMatricula(matricula: string) {
+    this.currentUserMatricula = matricula;
+  }
 
+  getCurrentUserMatricula(): string | null {
+    return this.currentUserMatricula;
+  }
+
+  isLoggedIn(): boolean {
+    return !!this.currentUserMatricula;
+  }
 }

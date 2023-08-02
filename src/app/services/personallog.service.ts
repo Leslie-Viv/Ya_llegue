@@ -6,11 +6,21 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PersonalLogService {
-  private personalinfUrl = 'http://localhost:3000/api/escuela/matricula';
+  currentUserData: any | null = null;
+  private personalinfUrl = 'http://localhost:3000/api/escuela/:matricula';
 
   constructor(private http: HttpClient) {}
+  
+  setCurrentUserData(data: any) {
+    this.currentUserData = data;
+  }
 
-  getPersonalInfo(): Observable<any> {
-    return this.http.get<any>(this.personalinfUrl);
+  getCurrentUserData(): any | null {
+    return this.currentUserData;
+  }
+
+  getPersonalInfo(matricula: string): Observable<any> {
+    const url = this.personalinfUrl.replace(':matricula', matricula);
+    return this.http.get<any>(url);
   }
 }
