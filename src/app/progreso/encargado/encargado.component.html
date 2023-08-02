@@ -49,12 +49,3 @@
         </label>
       </div>
     </div>
-
-    <button type="submit" class="btn btn-primary" >Registrar Progreso</button>
-  </form>
-
-  <div *ngIf="codigoQR" class="qr-container">
-    <h2>Código QR para el padre:</h2>
-    <qrcode [qrdata]="codigoQR" size="150"></qrcode>
-  </div>
-</div>
