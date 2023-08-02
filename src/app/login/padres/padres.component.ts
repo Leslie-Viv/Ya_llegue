@@ -18,4 +18,8 @@ export class PadresComponent {
     this.router.navigate(['loginpersonal']);
   }
 
+  registerbutton(){
+    this.router.navigate(['registropadres']);
+  }
+
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class PersonalrComponent {
 
   EscuelaData: any = {};
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService,private router: Router){}
 
   registerPersonal() {
     const matricula = this.EscuelaData.matricula;
@@ -30,6 +31,10 @@ export class PersonalrComponent {
         // Manejar el error si es necesario
       }
     );
+  }
+
+  returnlogin(){
+    this.router.navigate(['loginpersonal'])
   }
 
   onFileSelected(){}

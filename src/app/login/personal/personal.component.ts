@@ -99,4 +99,8 @@ export class PersonalComponent implements OnInit {
   toggleLoginTypePersonal(): void {
     this.router.navigate(['loginpersonal']);
   }
+
+  registerbutton(){
+    this.router.navigate(['registropersonal']);
+  }
 }
