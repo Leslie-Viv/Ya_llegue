@@ -10,6 +10,8 @@ export class AuthService {
 
   private registerUrl = 'http://localhost:3000/api/escuela/register';
 
+  private homeurl = 'http://localhost:3000/api/escuela/';
+
 
   constructor( private http: HttpClient) { }
 

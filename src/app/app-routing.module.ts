@@ -10,6 +10,7 @@ import { PersonalrComponent } from './registro/personalr/personalr.component';
 import { EncargadoprogresoComponent } from './progreso/encargado/encargado.component';
 import { PadreprogresoComponent } from './progreso/padre/padre.component';
 import { HomepadresComponent } from './homepadres/homepadres.component';
+import { HomePersonalComponent } from './homepersonal/homepersonal.component';
 
 
 
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'registropersonal', component: PersonalrComponent },
   { path: 'progesopersonal', component: EncargadoprogresoComponent },
   { path: 'progresopadre', component: PadreprogresoComponent},
-  { path:'homepadres',component:HomepadresComponent}
+  { path:'homepadres',component:HomepadresComponent},
+  { path:'homepersonal',component: HomePersonalComponent}
 
 ];
 
