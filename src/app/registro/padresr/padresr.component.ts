@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-padresr',
@@ -7,9 +8,14 @@ import { Component } from '@angular/core';
 })
 export class PadresrComponent {
 
+  constructor( private router: Router){}
+
   onFileSelected(){
     
   }
 
+  returnlogin(){
+    this.router.navigate(['loginpadres'])
+  }
 
 }
