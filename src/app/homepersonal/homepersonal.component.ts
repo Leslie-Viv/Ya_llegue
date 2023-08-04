@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonalLogService } from 'src/app/services/personallog.service';
+import { HijosService } from '../services/hijos.service';
 
 @Component({
   selector: 'app-homepersonal',
@@ -8,11 +9,13 @@ import { PersonalLogService } from 'src/app/services/personallog.service';
 })
 export class HomePersonalComponent implements OnInit {
   currentUserData: any | null = null;
-
-  constructor(private personalLogService: PersonalLogService) {}
+  hijos:any=[]
+  constructor(private hijoS:HijosService) {}
 
   ngOnInit(): void {
-    // Obtener los datos del usuario del servicio PersonalLogService
-    this.currentUserData = this.personalLogService.getCurrentUserData();
+    
+    this.hijoS.gethijos().subscribe(data=>{
+      this.hijos=data
+    })
   }
 }
