@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,8 +8,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./padresr.component.css']
 })
 export class PadresrComponent {
+  PadresData: any = {};
 
-  constructor( private router: Router){}
+  myForm!:FormGroup;
+
+  constructor( private router: Router, private formBuilder:FormBuilder){}
+
+  ngOnInit() {
+    this.myForm = this.formBuilder.group({
+      nombre: [''],
+      apellidos: [''],
+      grado: [''],
+      imagen: ['']
+      // Otros campos de tu formulario, si los tienes
+    });
+  }
 
   onFileSelected(){
     
@@ -16,6 +30,10 @@ export class PadresrComponent {
 
   returnlogin(){
     this.router.navigate(['loginpadres'])
+  }
+
+  limpiar(){
+    this.myForm.reset();
   }
 
 }

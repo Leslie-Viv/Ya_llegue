@@ -2,9 +2,9 @@
   <form class="custom-form" (ngSubmit)="registerPersonal()" #personalForm="ngForm">
     <h1>Formulario Personal</h1>
 
-    <div class="form-group">
+    <div  class="form-group">
       <label for="nombre" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="EscuelaData.nombre" required #nombreInput="ngModel" [ngClass]="{'is-valid': nombreInput.valid && (nombreInput.dirty || nombreInput.touched), 'is-invalid': nombreInput.invalid && (nombreInput.dirty || nombreInput.touched)}">
+      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="EscuelaData.nombre" required   pattern="^[A-Za-z]+$"   #nombreInput="ngModel" [ngClass]="{'is-valid': nombreInput.valid && (nombreInput.dirty || nombreInput.touched), 'is-invalid': nombreInput.invalid && (nombreInput.dirty || nombreInput.touched)}"   >
       <div class="valid-feedback" *ngIf="nombreInput.valid && (nombreInput.dirty || nombreInput.touched)">
         Listo
       </div>
@@ -15,7 +15,7 @@
 
     <div class="form-group">
       <label for="apellidos" class="form-label">Apellidos</label>
-      <input type="text" class="form-control" id="apellidos" name="apellidos" [(ngModel)]="EscuelaData.apellidos" required #apellidosInput="ngModel" [ngClass]="{'is-valid': apellidosInput.valid && (apellidosInput.dirty || apellidosInput.touched), 'is-invalid': apellidosInput.invalid && (apellidosInput.dirty || apellidosInput.touched)}">
+      <input type="text" class="form-control" id="apellidos" name="apellidos" [(ngModel)]="EscuelaData.apellidos" required  pattern="^[A-Za-z]+$"  #apellidosInput="ngModel" [ngClass]="{'is-valid': apellidosInput.valid && (apellidosInput.dirty || apellidosInput.touched), 'is-invalid': apellidosInput.invalid && (apellidosInput.dirty || apellidosInput.touched)}">
       <div class="valid-feedback" *ngIf="apellidosInput.valid && (apellidosInput.dirty || apellidosInput.touched)">
         Listo
       </div>
@@ -37,7 +37,7 @@
 
     <div class="form-group">
       <label for="puesto" class="form-label">Puesto</label>
-      <input type="text" class="form-control" id="puesto" name="puesto" [(ngModel)]="EscuelaData.puesto" required #puestoInput="ngModel" [ngClass]="{'is-valid': puestoInput.valid && (puestoInput.dirty || puestoInput.touched), 'is-invalid': puestoInput.invalid && (puestoInput.dirty || puestoInput.touched)}">
+      <input type="text" class="form-control" id="puesto" name="puesto" [(ngModel)]="EscuelaData.puesto" required  pattern="^[A-Za-z]+$" #puestoInput="ngModel" [ngClass]="{'is-valid': puestoInput.valid && (puestoInput.dirty || puestoInput.touched), 'is-invalid': puestoInput.invalid && (puestoInput.dirty || puestoInput.touched)}">
       <div class="valid-feedback" *ngIf="puestoInput.valid && (puestoInput.dirty || puestoInput.touched)">
         Listo
       </div>
@@ -68,7 +68,7 @@
       </div>
     </div>
 
-    <button type="submit" class="button"  >Registrarme</button>
+    <button type="submit" class="button" [disabled]="!myForm.valid" (click)="limpiar()" >Registrarme</button>
     <button  class="button"  (click)="returnlogin()">Login</button>
 
   </form>
