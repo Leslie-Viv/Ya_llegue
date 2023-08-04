@@ -15,6 +15,7 @@ import { EncargadoprogresoComponent } from './progreso/encargado/encargado.compo
 import { QRCodeModule } from 'angularx-qrcode';
 import { HomepadresComponent } from './homepadres/homepadres.component';
 import { HomePersonalComponent } from './homepersonal/homepersonal.component';
+import { PerfilpersonalComponent } from './perfilpersonal/perfilpersonal.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HomePersonalComponent } from './homepersonal/homepersonal.component';
     PersonalrComponent,
     EncargadoprogresoComponent,
     HomepadresComponent,
-    HomePersonalComponent
+    HomePersonalComponent,
+    PerfilpersonalComponent
   ],
   imports: [
     BrowserModule,
