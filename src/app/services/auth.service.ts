@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
   private loginUrl = 'http://localhost:3000/api/escuela/login';
   private registerUrl = 'http://localhost:3000/api/escuela/register';
+  private registerpadresUrl = 'http://localhost:3000/api/padres/registrarPadre';
   private currentUserMatricula: string | null = null;
 
 
@@ -26,6 +27,10 @@ export class AuthService {
   register(nombre: string, apellidos: string, puesto: string, matricula: string, password: string, foto: string): Observable<any> {
     const body = { nombre: nombre, apellidos: apellidos, puesto: puesto, matricula: matricula, password: password, foto: foto };
     return this.http.post(this.registerUrl, body);
+  }
+  registerpadres(nombre: string, apellidos: string, username: string, password: string, foto: string): Observable<any> {
+    const body = { nombre: nombre, apellidos: apellidos, username: username, password: password, foto: foto };
+    return this.http.post(this.registerpadresUrl, body);
   }
 
   setCurrentUserMatricula(matricula: string) {
