@@ -1,12 +1,10 @@
 <br>
 <div class="row justify-content-center">
   <div class="col-6">
-    <ul class="list-group">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-      <li class="list-group-item">A fourth item</li>
-      <li class="list-group-item">And a fifth one</li>
+    <ul *ngFor="let h of hijos;let i=index" class="list-group">
+      <li class="list-group-item">
+      <a (click)="redirigir(h.id)">{{h.nombre}} {{h.apellidos}}</a>
+    </li>
     </ul>
   </div>
 </div>

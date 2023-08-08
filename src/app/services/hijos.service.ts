@@ -21,4 +21,8 @@ export class HijosService {
     const body = { nombre: nombre, apellidos: apellidos, grupo: grupo, matricula: matricula, foto: foto, observaciones: observaciones, padreID: padreID };
     return this.http.post(this.registerAlumnosUrl, body);
   }
+
+  gethijo(id:any){
+    return this.http.get(this.hijoUrl, id)
+  }
 }
