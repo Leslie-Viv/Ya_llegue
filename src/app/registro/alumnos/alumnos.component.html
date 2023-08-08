@@ -1,5 +1,5 @@
 <div class="background">
-  <form class="custom-form" (ngSubmit)="registerAlumnos()" #alumnosform="ngForm">
+  <form class="custom-form" (ngSubmit)="registerAlumnos()" #myForm="ngForm">
     <h1>Formulario Alumnos</h1>
 
     <div class="form-group">
@@ -79,12 +79,12 @@
         Por favor ingresa un padre válido.
       </div>
       <!-- Mostrar mensaje de error si el campo padreID está vacío -->
-      <div class="invalid-feedback" *ngIf="alumnosform.submitted && !AlumnosData.padreID">
+      <div class="invalid-feedback" *ngIf="myForm.submitted && !AlumnosData.padreID">
         El campo Padre es obligatorio.
       </div>
     </div>
 
-    <button type="submit" class="button" [disabled]="!alumnosform.valid" (click)="limpiar()">Registrarme</button>
+    <button type="submit" class="button" [disabled]="!myForm.valid"  (click)="reset()">Registrarme</button>
 
   </form>
 </div>

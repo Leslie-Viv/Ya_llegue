@@ -35,11 +35,6 @@ export class AuthService {
     return this.http.post(this.registerpadresUrl, body);
   }
 
-  registerAlumnos(nombre: string, apellidos: string, grupo: string, matricula: string, foto: string, observaciones: string, padreID: number): Observable<any> {
-    const body = { nombre: nombre, apellidos: apellidos, grupo: grupo, matricula: matricula, foto: foto, observaciones: observaciones, padreID: padreID };
-    return this.http.post(this.registerAlumnosUrl, body);
-  }
-
   setCurrentUserMatricula(matricula: string) {
     this.currentUserMatricula = matricula;
   }
