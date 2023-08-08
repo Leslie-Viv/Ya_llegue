@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
 import { HijosService } from 'src/app/services/hijos.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-alumnos',
@@ -16,9 +16,10 @@ export class AlumnosComponent {
   myForm!: FormGroup;
 
   constructor( 
-    private authService: HijosService,
-    private router: Router,
-    private formBuilder: FormBuilder
+    private hijosService: HijosService,
+    private formBuilder: FormBuilder,
+    private ngZone: NgZone,
+
   ){}
 
 
@@ -43,12 +44,22 @@ registerAlumnos(){
   const observaciones = this.AlumnosData.observaciones;
   const padreID = this.AlumnosData.padreID;
 
-  this. authService.registerAlumnos(nombre,apellidos,grupo,matricula, foto, observaciones, padreID).subscribe(
+  this. hijosService.registerAlumnos(nombre,apellidos,grupo,matricula, foto, observaciones, padreID).subscribe(
     data => {
       console.log( 'Alumno registado con exito', data);
+      Swal.fire({
+        icon: 'success',
+        title: 'Registro exitoso',
+        text: 'Alumno registrado con éxito',
+      })
     },
       error =>{
         console.log('No se pudo completar el registro', error);
+        Swal.fire({
+          icon: 'warning',
+          title: 'Registro no completado',
+          text: 'Alumno no registrado',
+        });
       }
   )
 }
@@ -56,8 +67,11 @@ registerAlumnos(){
   onFileSelected(){
   }
 
-  limpiar(){
+
+  reset(){
     this.myForm.reset();
   }
 
 }
+
+
