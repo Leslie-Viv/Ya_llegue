@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,8 +11,27 @@ import { AuthService } from 'src/app/services/auth.service';
 export class PersonalrComponent {
 
   EscuelaData: any = {};
+  myForm!: FormGroup;
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService,private router: Router,private formBuilder:FormBuilder){}
+
+  ngOnInit() {
+    this.myForm = this.formBuilder.group({
+      matricula: [''],
+      password: [''],
+      nombre: [''],
+      apellidos: [''],
+      puesto: [''],
+      foto: [''],
+
+
+      // Otros campos de tu formulario, si los tienes
+    });
+  }
+
+    
+        
+
 
   registerPersonal() {
     const matricula = this.EscuelaData.matricula;
@@ -32,5 +53,15 @@ export class PersonalrComponent {
     );
   }
 
+  returnlogin(){
+    this.router.navigate(['loginpersonal'])
+  }
+
   onFileSelected(){}
+
+  limpiar(){
+    this.myForm.reset();
+  }
+
+  
 }

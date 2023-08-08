@@ -13,7 +13,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-image: url(../assets/img/rosa.jpg);
+  background-color: #FF6B35DE;
 }
 
 .login {
@@ -88,7 +88,7 @@
 .button {
   margin-top: 1.875em;
   width: 100%;
-  background-color: #e74d8d;
+  background-color: #FB986A;
   color: #fff;
   padding: 0.625em 0; /* Usamos em units para el padding responsive */
   font-size: 16px;
@@ -112,7 +112,7 @@
 }
 
 .button:hover {
-  background-color: #ff07d6;
+  background-color: #FF6B35;
 }
 
 .error {

@@ -52,7 +52,7 @@ export class PersonalComponent implements OnInit {
             this.tokenService.setToken(data.token);
 
             // Guardar los datos del usuario en el servicio PersonalLogService
-      
+            this.personalLogService.setCurrentUserData(data);
 
             console.log('Bienvenido Usuario');
             console.log(this.tokenService.isLogged());
@@ -100,4 +100,7 @@ export class PersonalComponent implements OnInit {
     this.router.navigate(['loginpersonal']);
   }
 
+  registerbutton(){
+    this.router.navigate(['registropersonal']);
+  }
 }

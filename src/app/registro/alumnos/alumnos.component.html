@@ -1,38 +1,85 @@
 <div class="background">
-  <form class="custom-form">
-    <h1>Formulario alumnos</h1>
+  <form class="custom-form" (ngSubmit)="registerAlumnos()" #personalForm="ngForm">
+    <h1>Formulario Personal</h1>
 
-    <div class="form-group">
-      <label for="nombre" class="form-label">Nombre(s)</label>
-      <input type="text" class="form-control is-valid" id="nombre" value="Mark" required>
-      <div class="valid-feedback">
+    <div  class="form-group">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="AlumnosData.nombre" required   pattern="^[A-Za-z]+$"   #nombreInput="ngModel" [ngClass]="{'is-valid': nombreInput.valid && (nombreInput.dirty || nombreInput.touched), 'is-invalid': nombreInput.invalid && (nombreInput.dirty || nombreInput.touched)}"   >
+      <div class="valid-feedback" *ngIf="nombreInput.valid && (nombreInput.dirty || nombreInput.touched)">
         Listo
+      </div>
+      <div class="invalid-feedback" *ngIf="nombreInput.invalid && (nombreInput.dirty || nombreInput.touched)">
+        Por favor ingresa un nombre válido.
       </div>
     </div>
 
     <div class="form-group">
       <label for="apellidos" class="form-label">Apellidos</label>
-      <input type="text" class="form-control is-valid" id="apellidos" value="Otto" required>
-      <div class="valid-feedback">
+      <input type="text" class="form-control" id="apellidos" name="apellidos" [(ngModel)]="AlumnosData.apellidos" required  pattern="^[A-Za-z]+$"  #apellidosInput="ngModel" [ngClass]="{'is-valid': apellidosInput.valid && (apellidosInput.dirty || apellidosInput.touched), 'is-invalid': apellidosInput.invalid && (apellidosInput.dirty || apellidosInput.touched)}">
+      <div class="valid-feedback" *ngIf="apellidosInput.valid && (apellidosInput.dirty || apellidosInput.touched)">
         Listo
       </div>
-    </div>
-
-    <div class="form-group">
-      <label for="grado" class="form-label">Grado</label>
-      <div class="input-group has-validation">
-        <input type="text" class="form-control is-invalid" id="grado" aria-describedby="gradoFeedback" required>
-        <div id="gradoFeedback" class="invalid-feedback">
-          Por favor agrega un grado
-        </div>
+      <div class="invalid-feedback" *ngIf="apellidosInput.invalid && (apellidosInput.dirty || apellidosInput.touched)">
+        Por favor ingresa apellidos válidos.
       </div>
     </div>
 
     <div class="form-group">
-      <label for="imagen">Foto</label>
-      <input type="file" id="imagen" name="imagen" required>
+      <label for="matricula" class="form-label">Matricula</label>
+      <input type="text" class="form-control" id="matricula" name="matricula" [(ngModel)]="AlumnosData.matricula" required #matriculaInput="ngModel" [ngClass]="{'is-valid': matriculaInput.valid && (matriculaInput.dirty || matriculaInput.touched), 'is-invalid': matriculaInput.invalid && (matriculaInput.dirty || matriculaInput.touched)}">
+      <div class="valid-feedback" *ngIf="matriculaInput.valid && (matriculaInput.dirty || matriculaInput.touched)">
+        Listo
+      </div>
+      <div class="invalid-feedback" *ngIf="matriculaInput.invalid && (matriculaInput.dirty || matriculaInput.touched)">
+        Por favor ingresa una matrícula válida.
+      </div>
     </div>
 
-    <button type="submit" class="button">Registrarme</button>
+    <div class="form-group">
+      <label for="grupo" class="form-label">Grupo</label>
+      <input type="text" class="form-control" id="grupo" name="grupo" [(ngModel)]="AlumnosData.grupo" required  pattern="^[A-Za-z]+$" #grupoInput="ngModel" [ngClass]="{'is-valid': grupoInput.valid && (grupoInput.dirty || grupoInput.touched), 'is-invalid': grupoInput.invalid && (grupoInput.dirty || grupoInput.touched)}">
+      <div class="valid-feedback" *ngIf="grupoInput.valid && (grupoInput.dirty || grupoInput.touched)">
+        Listo
+      </div>
+      <div class="invalid-feedback" *ngIf="grupoInput.invalid && (grupoInput.dirty || grupoInput.touched)">
+        Por favor ingresa un grupo válido.
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="foto">Foto</label>
+      <input type="text" class="form-control" id="foto" name="foto" [(ngModel)]="AlumnosData.foto" required #fotoInput="ngModel" [ngClass]="{'is-valid': fotoInput.valid && (fotoInput.dirty || fotoInput.touched), 'is-invalid': fotoInput.invalid && (fotoInput.dirty || fotoInput.touched)}">
+      <div class="valid-feedback" *ngIf="fotoInput.valid && (fotoInput.dirty || fotoInput.touched)">
+        Listo
+      </div>
+      <div class="invalid-feedback" *ngIf="fotoInput.invalid && (fotoInput.dirty || fotoInput.touched)">
+        Por favor ingresa una foto válida.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="foto">Observaciones</label>
+      <input type="text" class="form-control" id="observaciones" name="observaciones" [(ngModel)]="AlumnosData.observaciones" required #observacionesInput="ngModel" [ngClass]="{'is-valid': observacionesInput.valid && (observacionesInput.dirty || observacionesInput.touched), 'is-invalid': observacionesInput.invalid && (observacionesInput.dirty || observacionesInput.touched)}">
+      <div class="valid-feedback" *ngIf="observacionesInput.valid && (observacionesInput.dirty || observacionesInput.touched)">
+        Listo
+      </div>
+      <div class="invalid-feedback" *ngIf="fotoInput.invalid && (fotoInput.dirty || fotoInput.touched)">
+        Por favor ingresa una observacion que sea válida.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="foto">Padre</label>
+      <input type="text" class="form-control" id="padreid" name="foto" [(ngModel)]="AlumnosData.padreid" required #padreidInput="ngModel" [ngClass]="{'is-valid': padreidInput.valid && (padreidInput.dirty || padreidInput.touched), 'is-invalid': padreidInput.invalid && (padreidInput.dirty || padreidInput.touched)}">
+      <div class="valid-feedback" *ngIf="padreidInput.valid && (padreidInput.dirty || padreidInput.touched)">
+        Listo
+      </div>
+      <div class="invalid-feedback" *ngIf="padreidInput.invalid && (padreidInput.dirty || padreidInput.touched)">
+        Por favor ingresa un fpadre válido.
+      </div>
+    </div>
+
+    <button type="submit" class="button" [disabled]="!myForm.valid" (click)="limpiar()" >Registrarme</button>
+
   </form>
 </div>
