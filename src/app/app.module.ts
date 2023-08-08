@@ -16,6 +16,7 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { HomepadresComponent } from './homepadres/homepadres.component';
 import { HomePersonalComponent } from './homepersonal/homepersonal.component';
 import { PerfilpersonalComponent } from './perfilpersonal/perfilpersonal.component';
+import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PerfilpersonalComponent } from './perfilpersonal/perfilpersonal.compone
     EncargadoprogresoComponent,
     HomepadresComponent,
     HomePersonalComponent,
-    PerfilpersonalComponent
+    PerfilpersonalComponent,
+    PerfilAlumnoComponent
   ],
   imports: [
     BrowserModule,

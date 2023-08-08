@@ -12,6 +12,7 @@ import { PadreprogresoComponent } from './progreso/padre/padre.component';
 import { HomepadresComponent } from './homepadres/homepadres.component';
 import { HomePersonalComponent } from './homepersonal/homepersonal.component';
 import { PerfilpersonalComponent } from './perfilpersonal/perfilpersonal.component';
+import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
 
 
 
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'progresopadre', component: PadreprogresoComponent},
   { path:'homepadres',component:HomepadresComponent},
   { path:'homepersonal',component: HomePersonalComponent},
-  {path:'perfilpersonal',component: PerfilpersonalComponent}
+  {path:'perfilpersonal',component: PerfilpersonalComponent},
+  {path:'perfilhijo/:id', component:PerfilAlumnoComponent}
 
 ];
 

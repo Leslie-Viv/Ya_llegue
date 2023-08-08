@@ -19,11 +19,11 @@ export class HomePersonalComponent implements OnInit {
     this.hijoS.gethijos().subscribe(data=>{
       this.hijos=data
     })
-    console.log(this.hijos);
+
     
   }
 
   redirigir(hijoId:number){
-    this.router.navigate(['/',hijoId]);
+    this.router.navigate(['perfilhijo',hijoId]);
   }
 }
