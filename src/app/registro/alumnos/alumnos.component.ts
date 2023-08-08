@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { HijosService } from 'src/app/services/hijos.service';
 
 @Component({
   selector: 'app-alumnos',
@@ -15,7 +16,7 @@ export class AlumnosComponent {
   myForm!: FormGroup;
 
   constructor( 
-    private authService: AuthService,
+    private authService: HijosService,
     private router: Router,
     private formBuilder: FormBuilder
   ){}
@@ -29,7 +30,7 @@ export class AlumnosComponent {
       matricula:[''],
       foto:[''],
       observaciones: [''],
-      padreid:[''],
+      padreID:[''],
     })
   }
 
@@ -40,9 +41,9 @@ registerAlumnos(){
   const matricula = this.AlumnosData.matricula;
   const foto = this.AlumnosData.foto;
   const observaciones = this.AlumnosData.observaciones;
-  const padreid = this.AlumnosData.padreid;
+  const padreID = this.AlumnosData.padreID;
 
-  this. authService.registerAlumnos(nombre,apellidos,grupo,matricula, foto, observaciones, padreid).subscribe(
+  this. authService.registerAlumnos(nombre,apellidos,grupo,matricula, foto, observaciones, padreID).subscribe(
     data => {
       console.log( 'Alumno registado con exito', data);
     },
