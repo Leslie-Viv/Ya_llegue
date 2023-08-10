@@ -22,7 +22,8 @@ export class HijosService {
     return this.http.post(this.registerAlumnosUrl, body);
   }
 
-  gethijo(id:any){
-    return this.http.get(this.hijoUrl, id)
+  gethijo(id:any):Observable<any>{
+    const url = `${this.hijoUrl}${id}`;
+    return this.http.get(url)
   }
 }
