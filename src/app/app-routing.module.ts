@@ -11,6 +11,7 @@ import { EncargadoprogresoComponent } from './progreso/encargado/encargado.compo
 import { PadreprogresoComponent } from './progreso/padre/padre.component';
 import { HomepadresComponent } from './homepadres/homepadres.component';
 import { HeaderComponent } from './homepadres/header/header.component';
+import { HijosComponent } from './hijos/hijos.component';
 
 
 
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'progesopersonal', component: EncargadoprogresoComponent },
   { path: 'progresopadre', component: PadreprogresoComponent},
   { path:'homepadres',component:HomepadresComponent},
+  { path:'hijos',component:HijosComponent},
   { path:'header',component:HeaderComponent}
 
 ];
