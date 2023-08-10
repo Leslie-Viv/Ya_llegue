@@ -14,6 +14,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EncargadoprogresoComponent } from './progreso/encargado/encargado.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { HomepadresComponent } from './homepadres/homepadres.component';
+import { HeaderComponent } from './homepadres/header/header.component';
+import { HijosComponent } from './hijos/hijos.component';
+import { TutoresdispoComponent } from './tutoresdispo/tutoresdispo.component'; 
 import { HomePersonalComponent } from './homepersonal/homepersonal.component';
 import { PerfilpersonalComponent } from './perfilpersonal/perfilpersonal.component';
 import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
@@ -30,6 +33,8 @@ import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
     PersonalrComponent,
     EncargadoprogresoComponent,
     HomepadresComponent,
+    HijosComponent,
+    TutoresdispoComponent,
     HomePersonalComponent,
     PerfilpersonalComponent,
     PerfilAlumnoComponent
@@ -40,7 +45,7 @@ import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    QRCodeModule,
+    QRCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

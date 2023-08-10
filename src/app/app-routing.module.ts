@@ -10,9 +10,12 @@ import { PersonalrComponent } from './registro/personalr/personalr.component';
 import { EncargadoprogresoComponent } from './progreso/encargado/encargado.component';
 import { PadreprogresoComponent } from './progreso/padre/padre.component';
 import { HomepadresComponent } from './homepadres/homepadres.component';
+import { HeaderComponent } from './homepadres/header/header.component';
+import { HijosComponent } from './hijos/hijos.component';
 import { HomePersonalComponent } from './homepersonal/homepersonal.component';
 import { PerfilpersonalComponent } from './perfilpersonal/perfilpersonal.component';
 import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
+
 
 
 
@@ -28,9 +31,10 @@ const routes: Routes = [
   { path: 'progesopersonal', component: EncargadoprogresoComponent },
   { path: 'progresopadre', component: PadreprogresoComponent},
   { path:'homepadres',component:HomepadresComponent},
+  { path:'hijos',component:HijosComponent},
+  { path:'header',component:HeaderComponent},
   { path:'homepersonal',component: HomePersonalComponent},
-  {path:'perfilpersonal',component: PerfilpersonalComponent},
-  {path:'perfilhijo/:id', component:PerfilAlumnoComponent}
+  {path:'perfilpersonal',component: PerfilpersonalComponent}
 
 ];
 
