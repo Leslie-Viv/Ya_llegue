@@ -10,6 +10,7 @@ export class AuthService {
   private loginPadresUrl = 'http://localhost:3000/api/padres/login'
   private registerUrl = 'http://localhost:3000/api/escuela/register';
   private registerpadresUrl = 'http://localhost:3000/api/padres/registrarPadre';
+  private registerencargadosUrl = 'http://localhost:3000/api/encargados/nuevoEncargado';
   private currentUserMatricula: string | null = null;
 
 
@@ -29,10 +30,14 @@ export class AuthService {
     const body = { nombre: nombre, apellidos: apellidos, puesto: puesto, matricula: matricula, password: password, foto: foto };
     return this.http.post(this.registerUrl, body);
   }
-
+ 
   registerpadres(nombre: string, apellidos: string, username: string, password: string, foto: string): Observable<any> {
-    const body = { nombre: nombre, apellidos: apellidos, username: username, password: password, foto: foto };
+    const body = {  nombre: nombre, apellidos: apellidos, username: username, password: password, foto: foto};
     return this.http.post(this.registerpadresUrl, body);
+  }
+  registerencargados(nombre: string, apellidos: string, foto: string): Observable<any> {
+    const body = { nombre: nombre, apellidos: apellidos, foto: foto };
+    return this.http.post(this.registerencargadosUrl, body);
   }
 
   setCurrentUserMatricula(matricula: string) {

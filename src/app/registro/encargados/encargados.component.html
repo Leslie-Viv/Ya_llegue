@@ -19,6 +19,15 @@
     </div>
 
     <div class="form-group">
+      <label for="numero" class="form-label">Numero telefonico</label>
+      <input type="number" class="form-control is-valid" id="numero" value="" required>
+      <div class="valid-feedback">
+        Listo
+      </div>
+    </div>
+
+
+    <div class="form-group">
       <label for="imagen">Foto</label>
       <input type="file" id="imagen" name="imagen" (change)="onFileSelected()" required>
     </div>
