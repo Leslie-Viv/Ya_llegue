@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-encargados',
@@ -7,8 +8,12 @@ import { Component } from '@angular/core';
 })
 export class EncargadosComponent {
 
+  constructor( private router: Router){}
+
   onFileSelected(){
     
   }
+
+
 
 }

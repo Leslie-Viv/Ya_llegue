@@ -16,7 +16,10 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { HomepadresComponent } from './homepadres/homepadres.component';
 import { HeaderComponent } from './homepadres/header/header.component';
 import { HijosComponent } from './hijos/hijos.component';
-import { TutoresdispoComponent } from './tutoresdispo/tutoresdispo.component'; // Importa el módulo correcto
+import { TutoresdispoComponent } from './tutoresdispo/tutoresdispo.component'; 
+import { HomePersonalComponent } from './homepersonal/homepersonal.component';
+import { PerfilpersonalComponent } from './perfilpersonal/perfilpersonal.component';
+import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { TutoresdispoComponent } from './tutoresdispo/tutoresdispo.component'; /
     EncargadoprogresoComponent,
     HomepadresComponent,
     HijosComponent,
-    TutoresdispoComponent
+    TutoresdispoComponent,
+    HomePersonalComponent,
+    PerfilpersonalComponent,
+    PerfilAlumnoComponent
   ],
   imports: [
     BrowserModule,

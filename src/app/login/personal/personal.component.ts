@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { PersonalLogService } from 'src/app/services/personallog.service';
 import { TokenService } from 'src/app/services/token.service';
 import Swal from 'sweetalert2';
 
@@ -12,13 +13,14 @@ import Swal from 'sweetalert2';
 })
 export class PersonalComponent implements OnInit {
   miFormulario: FormGroup;
-  isPersonalLogin: boolean = true; // Establecer el tipo de inicio de sesión predeterminado en Personal
+  isPersonalLogin: boolean = true;
 
   constructor(
     private formBuilder: FormBuilder,
     private loginService: AuthService,
     private router: Router,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private personalLogService: PersonalLogService // Usa el PersonalLogService
   ) {
     this.miFormulario = this.formBuilder.group({
       matricula: ['', [Validators.required]],
@@ -32,11 +34,9 @@ export class PersonalComponent implements OnInit {
     const matricula = this.miFormulario.get('matricula')?.value;
     const password = this.miFormulario.get('password')?.value;
 
-    // Verificar el tipo de inicio de sesión y llamar al método de servicio de inicio de sesión correspondiente
     if (this.isPersonalLogin) {
       this.loginService.loginPersonal(matricula, password).subscribe(
         (data: any) => {
-          // Manejar la respuesta para el inicio de sesión de Personal
           localStorage.setItem('matricula', data.matricula);
           console.log('Token: ', data.token);
           if (!data.token) {
@@ -50,10 +50,14 @@ export class PersonalComponent implements OnInit {
           } else {
             console.log(data);
             this.tokenService.setToken(data.token);
+
+            // Guardar los datos del usuario en el servicio PersonalLogService
+            this.personalLogService.setCurrentUserData(data);
+
             console.log('Bienvenido Usuario');
             console.log(this.tokenService.isLogged());
             if (this.tokenService.isLogged() == true) {
-              this.router.navigate(['progesopersonal']);
+              this.router.navigate(['homepersonal']);
             } else {
               Swal.fire({
                 position: 'top-end',
@@ -84,32 +88,10 @@ export class PersonalComponent implements OnInit {
         }
       );
     } else {
-      this.loginService.loginPadres(matricula, password).subscribe(
-        (data: any) => {
-          // Manejar la respuesta para el inicio de sesión de Padres
-          // ...
-          // Si el inicio de sesión tiene éxito, redirigir al componente "Padres"
-          if (data && data.token) {
-            this.router.navigate(['padres']);
-          } else {
-            Swal.fire({
-              position: 'top-end',
-              icon: 'error',
-              title: 'No tienes acceso',
-              showConfirmButton: false,
-              timer: 1500,
-            });
-          }
-        },
-        (error: any) => {
-          // Manejar error para el inicio de sesión de Padres
-          // ...
-        }
-      );
+      // ...
     }
   }
 
-  // Función para alternar entre los tipos de inicio de sesión de Personal y Padres
   toggleLoginTypePadres(): void {
     this.router.navigate(['loginpadres']);
   }
@@ -118,4 +100,7 @@ export class PersonalComponent implements OnInit {
     this.router.navigate(['loginpersonal']);
   }
 
+  registerbutton(){
+    this.router.navigate(['registropersonal']);
+  }
 }

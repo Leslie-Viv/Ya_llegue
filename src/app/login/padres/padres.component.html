@@ -1,7 +1,7 @@
 <div class="background">
-  <form class="custom-form">
+  <form class="custom-form" [formGroup]="miFormulario" (ngSubmit)="save()">
     <h1>Iniciar Sesión</h1>
-    <h2>Tutor</h2>
+    <h2>Personal</h2>
     <ul class="wrapper">
       <h3>Cambiar de login</h3>
       <li class="icon facebook" (click)="toggleLoginTypePersonal()">
@@ -22,9 +22,31 @@
   </ul>
     <br />
 
-    <label for="password" class="form-label">Contraseña</label>
-    <input type="password" class="form-control" id="password" name="password" />
+    <div class="col-md-17">
+      <label for="username" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ingresa tu Username"
+        id="username"
+        formControlName="username"
+      />
+    </div>
+    <div class="col-md-17">
+      <label for="password" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="password" formControlName="password" />
+    </div>
     <br />
-    <button>Iniciar Sesión</button>
+    <button type="submit">Iniciar Sesión</button>
+    <br>
+    <br>
+    <br>
+    <div class="uiverse" (click)="registerbutton()">
+      <span class="tooltip">Registra tu cuenta</span>
+      <span>
+          Registrate
+      </span>
+  </div>
+
   </form>
 </div>
