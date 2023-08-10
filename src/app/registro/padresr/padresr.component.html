@@ -40,7 +40,7 @@
 
     <div class="form-group">
       <label for="password" class="form-label">Password</label>
-      <input type="text" class="form-control" id="password" name="password" [(ngModel)]="PadresData.password" required  pattern=""  #passwordInput="ngModel" [ngClass]="{'is-valid': passwordInput.valid && (passwordInput.dirty || passwordInput.touched), 'is-invalid': passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)}">
+      <input type="password" class="form-control" id="password" name="password" [(ngModel)]="PadresData.password" required  pattern=""  #passwordInput="ngModel" [ngClass]="{'is-valid': passwordInput.valid && (passwordInput.dirty || passwordInput.touched), 'is-invalid': passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)}">
       <div class="valid-feedback" *ngIf="passwordInput.valid && (passwordInput.dirty || passwordInput.touched)">
         Listo
       </div>

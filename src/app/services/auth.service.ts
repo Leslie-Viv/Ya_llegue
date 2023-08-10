@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
   private loginUrl = 'http://localhost:3000/api/escuela/login';
+  private loginPadresUrl = 'http://localhost:3000/api/padres/login'
   private registerUrl = 'http://localhost:3000/api/escuela/register';
   private registerpadresUrl = 'http://localhost:3000/api/padres/registrarPadre';
-  private registerAlumnosUrl = 'http://localhost:3000/api/hijos/registrarHijo';
   private currentUserMatricula: string | null = null;
 
 
@@ -20,9 +20,9 @@ export class AuthService {
     return this.http.post(this.loginUrl, body);
   }
 
-  loginPadres(matricula: string, password: string): Observable<any> {
-    const body = { matricula: matricula, password: password };
-    return this.http.post(this.loginUrl, body);
+  loginPadres(username: string, password: string): Observable<any> {
+    const body = { username: username, password: password };
+    return this.http.post(this.loginPadresUrl, body);
   }
 
   register(nombre: string, apellidos: string, puesto: string, matricula: string, password: string, foto: string): Observable<any> {

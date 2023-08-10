@@ -59,3 +59,7 @@
 .card__btn-solid:hover {
   background-color: #0056b3;
 }
+
+.list-group-item{
+  cursor: pointer;
+}
