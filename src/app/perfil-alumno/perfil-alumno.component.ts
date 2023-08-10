@@ -15,7 +15,12 @@ export class PerfilAlumnoComponent implements OnInit{
 
   ngOnInit(): void {
     const hijoId:any = this.route.snapshot.paramMap.get('id');
-    this.elemento= this.hijoS.gethijo(hijoId)
+    this.hijoS.gethijo(hijoId).subscribe(
+      (data)=> {
+        this.elemento= data;
+      }
+    )
+    
     console.log("hola",this.elemento);
     
     /* this.hijoS.gethijo(hijoId).subscribe(data=>{
