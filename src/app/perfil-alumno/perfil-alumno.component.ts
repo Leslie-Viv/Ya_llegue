@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HijosService } from '../services/hijos.service';
 
 @Component({
@@ -11,7 +11,8 @@ export class PerfilAlumnoComponent implements OnInit{
   elemento:any=[];
   
   constructor(private route:ActivatedRoute,
-    private hijoS:HijosService ){}
+    private hijoS:HijosService,
+    private router: Router ){}
 
   ngOnInit(): void {
     const hijoId:any = this.route.snapshot.paramMap.get('id');
@@ -20,14 +21,23 @@ export class PerfilAlumnoComponent implements OnInit{
         this.elemento= data;
       }
     )
-    
-    console.log("hola",this.elemento);
-    
-    /* this.hijoS.gethijo(hijoId).subscribe(data=>{
-      this.elemento=data
-      console.log(this.elemento);
-    }) */
-    
+  }
+  eliminar(id:any){
+    const idHijo:any=this.route.snapshot.paramMap.get('id');
+    this.hijoS.eliminarHijo(idHijo).subscribe(
+      ()=>{
+        this.router.navigate(['/homepersonal'])
+      },
+      (error)=>{
+        console.log('Error al eliminar el elemento:', error);
+        
+      }
+    )
+  }
+
+
+  editar(){
+    const idHijo:any=this.route.snapshot.paramMap.get('id');
     
   }
 }
