@@ -24,6 +24,6 @@ export class HomePersonalComponent implements OnInit {
   }
 
   redirigir(hijoId:number){
-    this.router.navigate(['perfilhijo',hijoId]);
+    this.router.navigate(['perfilalumno',hijoId]);
   }
 }

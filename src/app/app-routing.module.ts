@@ -34,7 +34,8 @@ const routes: Routes = [
   { path:'hijos',component:HijosComponent},
   { path:'header',component:HeaderComponent},
   { path:'homepersonal',component: HomePersonalComponent},
-  {path:'perfilpersonal',component: PerfilpersonalComponent}
+  {path:'perfilpersonal',component: PerfilpersonalComponent},
+  {path:'perfilalumno/:id', component:PerfilAlumnoComponent}
 
 ];
 
