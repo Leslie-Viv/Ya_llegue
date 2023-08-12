@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class EncargadosComponent {
   EncargadoData: any = {};
+
   myForm!:FormGroup;
 
 
@@ -19,8 +20,7 @@ export class EncargadosComponent {
     this.myForm = this.formBuilder.group({
       nombre: [''],
       apellidos: [''],
-      grado: [''],
-      imagen: ['']
+      foto: ['']
       // Otros campos de tu formulario, si los tienes
     });
   }
@@ -47,6 +47,15 @@ export class EncargadosComponent {
 
   onFileSelected(){
     
+  }
+
+  
+  returnlogin(){
+    this.router.navigate(['loginpadres'])
+  }
+
+  limpiar(){
+    this.myForm.reset();
   }
 
 

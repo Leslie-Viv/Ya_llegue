@@ -1,37 +1,51 @@
 <div class="background">
-  <form class="custom-form">
+  <form class="custom-form"  (ngSubmit)="registerencargados()" #encargadosForm="ngForm">
     <h1>Formulario encargados</h1>
 
-    <div class="form-group">
-      <label for="nombre" class="form-label">Nombre(s)</label>
-      <input type="text" class="form-control is-valid" id="nombre" value="Mark" required>
-      <div class="valid-feedback">
+    <div  class="form-group">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="EncargadoData.nombre" required   pattern="^[A-Za-z]+$"   #nombreInput="ngModel" [ngClass]="{'is-valid': nombreInput.valid && (nombreInput.dirty || nombreInput.touched), 'is-invalid': nombreInput.invalid && (nombreInput.dirty || nombreInput.touched)}"   >
+      <div class="valid-feedback" *ngIf="nombreInput.valid && (nombreInput.dirty || nombreInput.touched)">
         Listo
       </div>
+      <div class="invalid-feedback" *ngIf="nombreInput.invalid && (nombreInput.dirty || nombreInput.touched)">
+        Por favor ingresa un nombre válido.
+      </div>
     </div>
+
 
     <div class="form-group">
       <label for="apellidos" class="form-label">Apellidos</label>
-      <input type="text" class="form-control is-valid" id="apellidos" value="Otto" required>
-      <div class="valid-feedback">
+      <input type="text" class="form-control" id="apellidos" name="apellidos" [(ngModel)]="EncargadoData.apellidos" required  pattern="^[A-Za-z]+$"  #apellidosInput="ngModel" [ngClass]="{'is-valid': apellidosInput.valid && (apellidosInput.dirty || apellidosInput.touched), 'is-invalid': apellidosInput.invalid && (apellidosInput.dirty || apellidosInput.touched)}">
+      <div class="valid-feedback" *ngIf="apellidosInput.valid && (apellidosInput.dirty || apellidosInput.touched)">
         Listo
+      </div>
+      <div class="invalid-feedback" *ngIf="apellidosInput.invalid && (apellidosInput.dirty || apellidosInput.touched)">
+        Por favor ingresa apellidos válidos.
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="numero" class="form-label">Numero telefonico</label>
-      <input type="number" class="form-control is-valid" id="numero" value="" required>
-      <div class="valid-feedback">
+    <!-- <div class="form-group">
+      <label for="foto">Foto</label>
+      <input type="" (change)="onFileSelected()" class="form-control" id="foto" name="foto" [(ngModel)]="EncargadoData.foto" required #fotoInput="ngModel" [ngClass]="{'is-valid': fotoInput.valid && (fotoInput.dirty || fotoInput.touched), 'is-invalid': fotoInput.invalid && (fotoInput.dirty || fotoInput.touched)}">
+      <div class="valid-feedback" *ngIf="fotoInput.valid && (fotoInput.dirty || fotoInput.touched)">
         Listo
       </div>
-    </div>
+      <div class="invalid-feedback" *ngIf="fotoInput.invalid && (fotoInput.dirty || fotoInput.touched)">
+        Por favor ingresa una foto válida.
+      </div>
+    </div> -->
+
+
+  
+
 
 
     <div class="form-group">
       <label for="imagen">Foto</label>
       <input type="file" id="imagen" name="imagen" (change)="onFileSelected()" required>
-    </div>
+    </div> 
 
-    <button type="submit" class="button">Registrarme</button>
+    <button type="submit" class="button" [disabled]="!myForm.valid" (click)="limpiar()">Registrarme</button>
   </form>
 </div>

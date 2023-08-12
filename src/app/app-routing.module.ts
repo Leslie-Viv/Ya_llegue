@@ -15,6 +15,7 @@ import { HijosComponent } from './hijos/hijos.component';
 import { HomePersonalComponent } from './homepersonal/homepersonal.component';
 import { PerfilpersonalComponent } from './perfilpersonal/perfilpersonal.component';
 import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
+import { TutoresdispoComponent } from './tutoresdispo/tutoresdispo.component';
 
 
 
@@ -35,7 +36,8 @@ const routes: Routes = [
   { path:'header',component:HeaderComponent},
   { path:'homepersonal',component: HomePersonalComponent},
   {path:'perfilpersonal',component: PerfilpersonalComponent},
-  {path:'perfilalumno/:id', component:PerfilAlumnoComponent}
+  {path:'perfilalumno/:id', component:PerfilAlumnoComponent},
+  {path:'tutoresdispo', component:TutoresdispoComponent}
 
 ];
 

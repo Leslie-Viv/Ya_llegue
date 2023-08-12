@@ -3,6 +3,8 @@ import { PersonalLogService } from 'src/app/services/personallog.service';
 import { HijosService } from '../services/hijos.service';
 import { Router } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-homepersonal',
   templateUrl: './homepersonal.component.html',
@@ -13,6 +15,8 @@ export class HomePersonalComponent implements OnInit {
   hijos:any=[]
   constructor(private hijoS:HijosService,
     private router:Router) {}
+
+
 
   ngOnInit(): void {
     
