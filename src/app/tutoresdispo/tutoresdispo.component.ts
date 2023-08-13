@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HijosService } from '../services/hijos.service';
 
 @Component({
-  selector: 'app-perfil-alumno',
-  templateUrl: './perfil-alumno.component.html',
-  styleUrls: ['./perfil-alumno.component.css']
+  selector: 'app-tutoresdispo',
+  templateUrl: './tutoresdispo.component.html',
+  styleUrls: ['./tutoresdispo.component.css']
 })
-export class PerfilAlumnoComponent implements OnInit{
+export class TutoresdispoComponent {
   elemento:any=[];
-  
-  constructor(private route:ActivatedRoute,
+
+ constructor(private route:ActivatedRoute,
     private hijoS:HijosService,
     private router: Router ){}
 
@@ -41,3 +41,6 @@ export class PerfilAlumnoComponent implements OnInit{
     
   }
 }
+
+
+

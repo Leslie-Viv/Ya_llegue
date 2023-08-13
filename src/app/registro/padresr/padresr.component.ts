@@ -12,6 +12,7 @@ export class PadresrComponent {
   PadresData: any = {};
 
   myForm!:FormGroup;
+  selectedFile: File | null = null;
 
   constructor(private authService: AuthService, private router: Router, private formBuilder:FormBuilder){}
 
@@ -46,7 +47,8 @@ export class PadresrComponent {
     );
   }
 
-  onFileSelected(){
+  onFileSelected(event: any){
+    this.selectedFile = event.target.files[0];
     
   }
 

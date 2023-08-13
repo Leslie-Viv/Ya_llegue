@@ -9,8 +9,10 @@ export class AuthService {
   private loginUrl = 'http://localhost:3000/api/escuela/login';
   private loginPadresUrl = 'http://localhost:3000/api/padres/login'
   private registerUrl = 'http://localhost:3000/api/escuela/register';
-  private registerpadresUrl = 'http://localhost:3000/api/padres/registrarPadre';
+  private registerpadresUrl = 'http://localhost:3000/api/padres/registro';
+  private registerencargadosUrl = 'http://localhost:3000/api/encargados/nuevoEncargado';
   private currentUserMatricula: string | null = null;
+  private encargadosUrl = 'http://localhost:3000/api/encargados';
 
 
   constructor(private http: HttpClient) { }
@@ -29,10 +31,26 @@ export class AuthService {
     const body = { nombre: nombre, apellidos: apellidos, puesto: puesto, matricula: matricula, password: password, foto: foto };
     return this.http.post(this.registerUrl, body);
   }
-
-  registerpadres(nombre: string, apellidos: string, username: string, password: string, foto: string): Observable<any> {
-    const body = { nombre: nombre, apellidos: apellidos, username: username, password: password, foto: foto };
+ 
+   registerpadres(nombre: string, apellidos: string, username: string, password: string, foto: string): Observable<any> {
+    const body = {  nombre: nombre, apellidos: apellidos, username: username, password: password, foto: foto};
     return this.http.post(this.registerpadresUrl, body);
+   }
+
+  // registerpadres(nombre: string, apellidos: string, username: string, password: string, foto: File): Observable<any> {
+  //   const formData = new FormData();
+  //   formData.append('nombre', nombre);
+  //   formData.append('apellidos', apellidos);
+  //   formData.append('username', username);
+  //   formData.append('password', password);
+  //   formData.append('foto', foto); // Agrega la imagen al formData
+  
+  //   return this.http.post(this.registerpadresUrl, formData);
+  // }
+
+  registerencargados(nombre: string, apellidos: string, foto: string): Observable<any> {
+    const body = { nombre: nombre, apellidos: apellidos, foto: foto };
+    return this.http.post(this.registerencargadosUrl, body);
   }
 
   setCurrentUserMatricula(matricula: string) {

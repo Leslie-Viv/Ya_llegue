@@ -23,7 +23,17 @@ export class HijosService {
   }
 
   gethijo(id:any):Observable<any>{
-    const url = `${this.hijoUrl}${id}`;
+    const url = `${this.hijoUrl}/${id}`;
     return this.http.get(url)
+  }
+
+  eliminarHijo(id:any){
+    const url = `${this.hijoUrl}/${id}`
+    return this.http.delete(url)
+  }
+
+  actualizarHijo(id:any){
+    const url = `${this.hijoUrl}/${id}`
+    return this.http.patch(url, id)
   }
 }

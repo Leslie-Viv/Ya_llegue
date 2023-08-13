@@ -48,20 +48,25 @@
         Por favor ingresa tu Contraseña.
       </div>
     </div>
-
-
-   
-
+    
     <div class="form-group">
-      <label for="foto">Foto</label>
-      <input type="" (change)="onFileSelected()" class="form-control" id="foto" name="foto" [(ngModel)]="PadresData.foto" required #fotoInput="ngModel" [ngClass]="{'is-valid': fotoInput.valid && (fotoInput.dirty || fotoInput.touched), 'is-invalid': fotoInput.invalid && (fotoInput.dirty || fotoInput.touched)}">
+      <label for="foto" class="form-label">Foto</label>
+      <input type="foto" class="form-control" id="password" name="foto" [(ngModel)]="PadresData.foto" required  pattern=""  #fotoInput="ngModel" [ngClass]="{'is-valid': fotoInput.valid && (fotoInput.dirty || fotoInput.touched), 'is-invalid': fotoInput.invalid && (fotoInput.dirty || fotoInput.touched)}">
       <div class="valid-feedback" *ngIf="fotoInput.valid && (fotoInput.dirty || fotoInput.touched)">
         Listo
       </div>
       <div class="invalid-feedback" *ngIf="fotoInput.invalid && (fotoInput.dirty || fotoInput.touched)">
-        Por favor ingresa una foto válida.
+        Por favor ingresa tu foto
       </div>
     </div>
+
+
+   
+<!-- 
+    <div class="form-group">
+      <label for="imagen">Foto</label>
+      <input type="file" id="imagen" name="imagen" (change)="onFileSelected($event)" required>
+    </div>  -->
 
    
 
