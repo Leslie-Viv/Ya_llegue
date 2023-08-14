@@ -36,8 +36,5 @@ export class PerfilAlumnoComponent implements OnInit{
   }
 
 
-  editar(){
-    const idHijo:any=this.route.snapshot.paramMap.get('id');
-    
-  }
+
 }

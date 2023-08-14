@@ -26,6 +26,7 @@ const routes: Routes = [
   { path: 'loginpadres', component: PadresComponent},
   { path: 'loginpersonal', component: PersonalComponent},
   { path: 'registroalumnos', component: AlumnosComponent},
+  { path: 'registroalumnos/:id', component: AlumnosComponent},
   { path: 'registroencargados', component: EncargadosComponent},
   { path: 'registropadres', component: PadresrComponent},
   { path: 'registropersonal', component: PersonalrComponent },

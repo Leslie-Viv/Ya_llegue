@@ -1,5 +1,6 @@
 import { Component, NgZone } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HijosService } from 'src/app/services/hijos.service';
 import Swal from 'sweetalert2';
 
@@ -19,6 +20,8 @@ export class AlumnosComponent {
     private hijosService: HijosService,
     private formBuilder: FormBuilder,
     private ngZone: NgZone,
+    private activateRoute:ActivatedRoute,
+    private router:Router
 
   ){}
 
@@ -33,6 +36,8 @@ export class AlumnosComponent {
       observaciones: [''],
       padreID:[''],
     })
+
+    this.cargar();
   }
 
 registerAlumnos(){
@@ -72,6 +77,22 @@ registerAlumnos(){
     this.myForm.reset();
   }
 
+  cargar():void{
+    this.activateRoute.params.subscribe(
+      e=>{
+        let id=e['id'];
+        if(id){
+          this.hijosService.gethijo(id).subscribe(
+            es=>this.AlumnosData=es
+          );
+        }}
+    )}
+
+    update():void{
+      this.hijosService.actualizarHijo(this.AlumnosData).subscribe(
+        e=>this.router.navigate(['/perfilalumno/', this.AlumnosData.id])
+      );
+    }
 }
 
 

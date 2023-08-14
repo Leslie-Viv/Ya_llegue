@@ -84,7 +84,10 @@
       </div>
     </div>
 
-    <button type="submit" class="button" [disabled]="!myForm.valid"  (click)="reset()">Registrarme</button>
+    <button type="submit" class="button" [disabled]="!myForm.valid"  (click)="reset()" *ngIf="!AlumnosData.id else elseBlock">Registrarme</button>
+    <ng-template #elseBlock>
+      <button type="submit" class="button" [disabled]="!myForm.valid"  (click)="update()">Actualizar</button>
+    </ng-template>
 
   </form>
 </div>
