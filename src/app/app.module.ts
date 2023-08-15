@@ -37,7 +37,8 @@ import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
     TutoresdispoComponent,
     HomePersonalComponent,
     PerfilpersonalComponent,
-    PerfilAlumnoComponent
+    PerfilAlumnoComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ export class AuthService {
   private registerpadresUrl = 'http://localhost:3000/api/padres/registro';
   private registerencargadosUrl = 'http://localhost:3000/api/encargados/nuevoEncargado';
   private currentUserMatricula: string | null = null;
+  private currentUserID: string | null = null;
   private encargadosUrl = 'http://localhost:3000/api/encargados';
 
 
@@ -48,8 +49,8 @@ export class AuthService {
   //   return this.http.post(this.registerpadresUrl, formData);
   // }
 
-  registerencargados(nombre: string, apellidos: string, foto: string): Observable<any> {
-    const body = { nombre: nombre, apellidos: apellidos, foto: foto };
+  registerencargados(nombre: string, apellidos: string, foto: string, padreID:number): Observable<any> {
+    const body = { nombre: nombre, apellidos: apellidos, foto: foto, padreID:padreID };
     return this.http.post(this.registerencargadosUrl, body);
   }
 

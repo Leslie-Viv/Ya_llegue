@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'registropersonal', component: PersonalrComponent },
   { path: 'progesopersonal', component: EncargadoprogresoComponent },
   { path: 'progresopadre', component: PadreprogresoComponent},
-  { path:'homepadres',component:HomepadresComponent},
+  { path:'homepadres/:id',component:HomepadresComponent},
   { path:'hijos',component:HijosComponent},
   { path:'header',component:HeaderComponent},
   { path:'homepersonal',component: HomePersonalComponent},
