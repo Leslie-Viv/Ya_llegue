@@ -16,7 +16,7 @@ import { HomePersonalComponent } from './homepersonal/homepersonal.component';
 import { PerfilpersonalComponent } from './perfilpersonal/perfilpersonal.component';
 import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
 import { ScannerComponent } from './scanner/scanner.component';
-
+import { TutoresdispoComponent } from './tutoresdispo/tutoresdispo.component';
 
 
 
@@ -27,17 +27,20 @@ const routes: Routes = [
   { path: 'loginpadres', component: PadresComponent},
   { path: 'loginpersonal', component: PersonalComponent},
   { path: 'registroalumnos', component: AlumnosComponent},
+  { path: 'registroalumnos/:id', component: AlumnosComponent},
   { path: 'registroencargados', component: EncargadosComponent},
   { path: 'registropadres', component: PadresrComponent},
   { path: 'registropersonal', component: PersonalrComponent },
   { path: 'progesopersonal', component: EncargadoprogresoComponent },
   { path: 'progresopadre', component: PadreprogresoComponent},
-  { path:'homepadres',component:HomepadresComponent},
+  { path:'homepadres/:id',component:HomepadresComponent},
   { path:'hijos',component:HijosComponent},
   { path:'header',component:HeaderComponent},
   { path:'homepersonal',component: HomePersonalComponent},
   {path:'perfilpersonal',component: PerfilpersonalComponent},
   {path:'scanner',component: ScannerComponent},
+  {path:'perfilalumno/:id', component:PerfilAlumnoComponent},
+  {path:'tutoresdispo', component:TutoresdispoComponent}
 
 ];
 

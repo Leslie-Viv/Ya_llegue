@@ -22,7 +22,19 @@ export class HijosService {
     return this.http.post(this.registerAlumnosUrl, body);
   }
 
-  gethijo(id:any){
-    return this.http.get(this.hijoUrl, id)
+  gethijo(id:any):Observable<any>{
+    const url = `${this.hijoUrl}/${id}`;
+    return this.http.get(url)
+  }
+
+  eliminarHijo(id:any){
+    const url = `${this.hijoUrl}/${id}`
+    return this.http.delete(url)
+  }
+
+  actualizarHijo(id:number, nombre: string, apellidos: string, grupo: string, matricula: string, foto: string, observaciones: string, padreID: number){
+    const body = {id:id, nombre: nombre, apellidos: apellidos, grupo: grupo, matricula: matricula, foto: foto, observaciones: observaciones, padreID: padreID };
+    const url = `${this.hijoUrl}/${id}`
+    return this.http.patch(url, body)
   }
 }

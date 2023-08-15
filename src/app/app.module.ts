@@ -41,7 +41,8 @@ import { ScannerComponent } from './scanner/scanner.component';
     HomePersonalComponent,
     PerfilpersonalComponent,
     PerfilAlumnoComponent,
-    ScannerComponent
+    ScannerComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

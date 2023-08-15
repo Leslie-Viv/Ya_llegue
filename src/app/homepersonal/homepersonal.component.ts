@@ -3,6 +3,8 @@ import { PersonalLogService } from 'src/app/services/personallog.service';
 import { HijosService } from '../services/hijos.service';
 import { Router } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-homepersonal',
   templateUrl: './homepersonal.component.html',
@@ -14,6 +16,8 @@ export class HomePersonalComponent implements OnInit {
   constructor(private hijoS:HijosService,
     private router:Router) {}
 
+
+
   ngOnInit(): void {
     
     this.hijoS.gethijos().subscribe(data=>{
@@ -24,6 +28,6 @@ export class HomePersonalComponent implements OnInit {
   }
 
   redirigir(hijoId:number){
-    this.router.navigate(['perfilhijo',hijoId]);
+    this.router.navigate(['perfilalumno',hijoId]);
   }
 }

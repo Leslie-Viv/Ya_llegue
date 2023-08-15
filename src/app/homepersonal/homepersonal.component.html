@@ -1,10 +1,31 @@
+
+<div class="background">
+<body>
+  <nav class="navbar">
+     <a class="navbar-brand">Ya llegue!</a>
+      <ul class="nav-list">
+          <li><a routerLink="/progesopersonal" href="#">Registar progreso</a></li>
+          <li><a routerLink="/registroalumnos" href="#">Registar alumno</a></li>
+          <li><a routerLink="/loginpersonal" href="#">Cerrar Sesión</a></li>
+      </ul>
+  </nav>
+</body>
+
 <br>
+
+
+
+<div class="content">
 <div class="row justify-content-center">
-  <div class="col-6">
+  <div class="col-8">
     <ul *ngFor="let h of hijos;let i=index" class="list-group">
-      <li class="list-group-item">
-      <a (click)="redirigir(h.id)">{{h.nombre}} {{h.apellidos}}</a>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{h.nombre}} {{h.apellidos}}
+        <button (click)="redirigir(h.id)" class="orange-button">Detalles</button>
     </li>
+    <br>
     </ul>
   </div>
+</div> 
+</div>
 </div>
