@@ -54,7 +54,7 @@ export class PadresComponent {
             console.log('Bienvenido Usuario');
             console.log(this.tokenService.isLogged());
             if (this.tokenService.isLogged() == true) {
-              this.router.navigate(['homepadres']);
+              this.router.navigate(['homepadres/', data.id]);
             } else {
               Swal.fire({
                 position: 'top-end',
