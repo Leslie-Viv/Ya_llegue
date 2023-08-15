@@ -5,7 +5,7 @@
         <div class="card__title">{{elemento.nombre}} {{elemento.apellidos}}</div>
         <div class="card__subtitle">Grupo: {{elemento.grupo}} Matricula: {{elemento.matricula}}</div>
         <div class="card__wrapper">
-            <button class="card__btn" type="button" [routerLink]="['registroalumnos', elemento.id]">Editar</button>
+            <button class="card__btn" type="button" [routerLink]="['/registroalumnos/',elemento.id]">Editar</button>
             <button class="card__btn card__btn-solid" (click)="eliminar(elemento.id)">Eliminar</button>
         </div>
     </div>

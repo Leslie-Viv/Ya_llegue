@@ -1,5 +1,5 @@
 <div class="background">
-  <form class="custom-form" (ngSubmit)="registerAlumnos()" #myForm="ngForm">
+  <form class="custom-form"  #myForm="ngForm">
     <h1>Formulario Alumnos</h1>
 
     <div class="form-group">
@@ -84,7 +84,7 @@
       </div>
     </div>
 
-    <button type="submit" class="button" [disabled]="!myForm.valid"  (click)="reset()" *ngIf="!AlumnosData.id else elseBlock">Registrarme</button>
+    <button type="submit" class="button" [disabled]="!myForm.valid"  (click)="registerAlumnos()" *ngIf="!AlumnosData.id else elseBlock">Registrarme</button>
     <ng-template #elseBlock>
       <button type="submit" class="button" [disabled]="!myForm.valid"  (click)="update()">Actualizar</button>
     </ng-template>

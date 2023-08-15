@@ -67,6 +67,8 @@ registerAlumnos(){
         });
       }
   )
+  console.log(padreID);
+  
 }
   
   onFileSelected(){
@@ -89,7 +91,15 @@ registerAlumnos(){
     )}
 
     update():void{
-      this.hijosService.actualizarHijo(this.AlumnosData).subscribe(
+      const id=this.AlumnosData.id;
+      const nombre = this.AlumnosData.nombre;
+      const apellidos = this.AlumnosData.apellidos;
+      const grupo = this.AlumnosData.grupo;
+      const matricula = this.AlumnosData.matricula;
+      const foto = this.AlumnosData.foto;
+      const observaciones = this.AlumnosData.observaciones;
+      const padre = this.AlumnosData.padre;
+      this.hijosService.actualizarHijo(id,nombre,apellidos,grupo,matricula, foto, observaciones, padre).subscribe(
         e=>this.router.navigate(['/perfilalumno/', this.AlumnosData.id])
       );
     }

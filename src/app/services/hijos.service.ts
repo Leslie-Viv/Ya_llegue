@@ -32,8 +32,9 @@ export class HijosService {
     return this.http.delete(url)
   }
 
-  actualizarHijo(id:any){
+  actualizarHijo(id:number, nombre: string, apellidos: string, grupo: string, matricula: string, foto: string, observaciones: string, padreID: number){
+    const body = {id:id, nombre: nombre, apellidos: apellidos, grupo: grupo, matricula: matricula, foto: foto, observaciones: observaciones, padreID: padreID };
     const url = `${this.hijoUrl}/${id}`
-    return this.http.patch(url, id)
+    return this.http.patch(url, body)
   }
 }
