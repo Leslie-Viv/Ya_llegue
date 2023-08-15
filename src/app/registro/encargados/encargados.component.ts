@@ -20,7 +20,8 @@ export class EncargadosComponent {
     this.myForm = this.formBuilder.group({
       nombre: [''],
       apellidos: [''],
-      foto: ['']
+      foto: [''],
+      padreID:['']
       // Otros campos de tu formulario, si los tienes
     });
   }
@@ -29,8 +30,9 @@ export class EncargadosComponent {
     const nombre= this.EncargadoData.nombre;
     const apellidos = this.EncargadoData.apellidos;
     const foto = this.EncargadoData.foto;
+    const padreID= this.EncargadoData.padreID
 
-    this.authService.registerencargados( nombre,apellidos,foto ) .subscribe(
+    this.authService.registerencargados( nombre,apellidos,foto, padreID ) .subscribe(
       data => {
         console.log('Usuario registrado:', data);
         // Puedes realizar alguna acción adicional después de registrar el usuario
