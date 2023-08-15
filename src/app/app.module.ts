@@ -20,9 +20,6 @@ import { TutoresdispoComponent } from './tutoresdispo/tutoresdispo.component';
 import { HomePersonalComponent } from './homepersonal/homepersonal.component';
 import { PerfilpersonalComponent } from './perfilpersonal/perfilpersonal.component';
 import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
-import { ZXingScannerModule } from '@zxing/ngx-scanner';
-import { ScannerComponent } from './scanner/scanner.component';
-
 
 @NgModule({
   declarations: [
@@ -41,7 +38,6 @@ import { ScannerComponent } from './scanner/scanner.component';
     HomePersonalComponent,
     PerfilpersonalComponent,
     PerfilAlumnoComponent,
-    ScannerComponent,
     HeaderComponent
   ],
   imports: [
@@ -50,7 +46,7 @@ import { ScannerComponent } from './scanner/scanner.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ZXingScannerModule
+    QRCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
