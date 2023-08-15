@@ -16,6 +16,7 @@ import { HomePersonalComponent } from './homepersonal/homepersonal.component';
 import { PerfilpersonalComponent } from './perfilpersonal/perfilpersonal.component';
 import { PerfilAlumnoComponent } from './perfil-alumno/perfil-alumno.component';
 import { TutoresdispoComponent } from './tutoresdispo/tutoresdispo.component';
+import { ScannerComponent } from './scanner/scanner.component';
 
 
 
@@ -38,7 +39,8 @@ const routes: Routes = [
   { path:'homepersonal',component: HomePersonalComponent},
   {path:'perfilpersonal',component: PerfilpersonalComponent},
   {path:'perfilalumno/:id', component:PerfilAlumnoComponent},
-  {path:'tutoresdispo', component:TutoresdispoComponent}
+  {path:'tutoresdispo', component:TutoresdispoComponent},
+  {path:'scanner', component:ScannerComponent}
 
 ];
 

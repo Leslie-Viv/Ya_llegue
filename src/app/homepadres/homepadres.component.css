@@ -1,0 +1,61 @@
+.navbar {
+    position: fixed; /* Hace que el navbar sea fijo */
+    top: 0; /* Lo posiciona en la parte superior */
+    left: 0;
+    width: 100%; /* Ancho del navbar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FB986A;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Asegura que el navbar esté por encima del contenido */
+  }
+  
+  .content {
+    margin-top: 70px; /* Ajusta el margen superior para dar espacio al navbar */
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav-list li {
+    margin: 0 15px;
+  }
+  
+  .nav-list li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .nav-list li a:hover {
+    color: #5C755C;
+  }
+  
+  /* Agregar efecto de hover a los elementos de la lista */
+  .nav-list li:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+  }
+  
+  .navbar-brand {
+    color: white; /* Cambiar el color del texto a blanco */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .background {
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background: linear-gradient(to right, #ffedc4, #ffedc9);
+  }
+  

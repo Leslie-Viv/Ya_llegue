@@ -49,8 +49,8 @@ export class AuthService {
   //   return this.http.post(this.registerpadresUrl, formData);
   // }
 
-  registerencargados(nombre: string, apellidos: string, foto: string, padreID:number): Observable<any> {
-    const body = { nombre: nombre, apellidos: apellidos, foto: foto, padreID:padreID };
+  registerencargados(nombre: string, apellidos: string, foto: string, numero:number): Observable<any> {
+    const body = { nombre: nombre, apellidos: apellidos, foto: foto, numero: numero };
     return this.http.post(this.registerencargadosUrl, body);
   }
 

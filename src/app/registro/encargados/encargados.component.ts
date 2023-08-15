@@ -30,9 +30,10 @@ export class EncargadosComponent {
     const nombre= this.EncargadoData.nombre;
     const apellidos = this.EncargadoData.apellidos;
     const foto = this.EncargadoData.foto;
-    const padreID= this.EncargadoData.padreID
+    const numero = this.EncargadoData.numero;
 
-    this.authService.registerencargados( nombre,apellidos,foto, padreID ) .subscribe(
+
+    this.authService.registerencargados( nombre,apellidos,foto, numero) .subscribe(
       data => {
         console.log('Usuario registrado:', data);
         // Puedes realizar alguna acción adicional después de registrar el usuario

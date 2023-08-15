@@ -9,7 +9,7 @@ import { PadresService } from '../services/padres.service';
 })
 export class HomepadresComponent implements OnInit {
   elemento:any=[];
-  hijos:any={};
+  hijos:any[] = [];
 
   constructor(private route:ActivatedRoute,
     private padresS:PadresService,
@@ -21,11 +21,14 @@ export class HomepadresComponent implements OnInit {
       (data)=> {
         this.elemento= data;
       })
+      console.log(this.elemento);
   }
 
   gethijos(){
-    this.padresS.gethijos(this.elemento.id).subscribe(data=>{
-      this.hijos=data
+    this.padresS.gethijos(this.elemento.id).subscribe((hijos: any[])=>{
+      this.hijos=hijos
+      console.log(this.hijos);
     })
+
   }
 }

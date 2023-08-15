@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 export class PadresComponent {
   miFormulario: FormGroup;
   isPersonalLogin: boolean = true;
-
+  
   constructor(
     private formBuilder: FormBuilder,
     private loginService: AuthService,
@@ -54,7 +54,7 @@ export class PadresComponent {
             console.log('Bienvenido Usuario');
             console.log(this.tokenService.isLogged());
             if (this.tokenService.isLogged() == true) {
-              this.router.navigate(['homepadres/', data.id]);
+              this.router.navigate(['homepadres/', 9]);
             } else {
               Swal.fire({
                 position: 'top-end',

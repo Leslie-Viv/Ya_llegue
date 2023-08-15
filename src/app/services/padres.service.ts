@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class PadresService {
   currentUserData: any | null = null;
-  private URL = 'http://localhost:3000/api/padres/';
+  private URL = 'http://localhost:3000/api/padres';
 
   constructor(private http:HttpClient) { }
 

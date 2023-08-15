@@ -1,4 +1,20 @@
-<div class="container">
+
+<div class="background">
+  <body>
+    <nav class="navbar">
+       <a class="navbar-brand">Ya llegue!</a>
+        <ul class="nav-list">
+            <li><a routerLink="/registroencargados" href="#">Registar encargados</a></li>
+            <li><a routerLink="/progresopadre" href="#">Progreso</a></li>
+            <li><a routerLink="/loginpersonal" href="#">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+  </body>
+  
+  <br>
+
+  <div class="content">
+  <div class="container">
   <h1>Progreso del Niño</h1>
 
   <div *ngIf="progresoRegistrado">
@@ -11,4 +27,5 @@
 
     
   </div>
+</div>
 </div>
